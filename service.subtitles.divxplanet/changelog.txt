@@ -1,0 +1,2 @@
+0.0.1
+- move the service out of XBMC Subtitles
