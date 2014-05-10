@@ -1,4 +1,4 @@
-service.subtitles.demo
+Divxplanet XBMC Subtitle Addon
 ======================
 
-service.subtitles.demo
+this is unofficial
