@@ -331,9 +331,6 @@ def get_params():
 
 params = get_params()
 
-print params
-
-
 if params['action'] == 'search':
   item = {}
   item['temp']               = False
