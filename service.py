@@ -303,7 +303,7 @@ def Download(link, lang, filename): #standard input
             for file in files:
                 # there could be more subtitle files in __temp__, so make sure we get the newly created subtitle file
                 if (string.split(file, '.')[-1] in ['srt', 'sub']) and (os.stat(os.path.join(__temp__, file)).st_mtime > init_max_mtime): # unpacked file is a newly created subtitle file
-                    log("Divxplanet: Unpacked subtitles file '%s'" % (file))
+                    log("Divxplanet: Unpacked subtitles file '%s'" % (file.encode("utf-8")))
                     subs_file = os.path.join(__temp__, file)
                     subtitle_list.append(subs_file)
     log("Divxplanet: Subtitles saved to '%s'" % ( local_tmp_file))
