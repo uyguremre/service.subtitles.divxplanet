@@ -274,7 +274,7 @@ def Download(link, lang, filename): #standard input
         localName = r.info()['Content-Disposition'].split('filename=')[1]
         if localName[0] == '"' or localName[0] == "'":
             localName = localName[1:-1]
-    elif r.url != url: 
+    elif r.url != dlurl: 
         # if we were redirected, the real file name we take from the final URL
         localName = url2name(r.url)
     
