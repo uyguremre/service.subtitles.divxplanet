@@ -161,6 +161,12 @@ def Search(item):
     else:
         log("Divxplanet: searching subtitles for %s %s" % (title, year))
         tvurl = getmediaUrl(["film", title, year])
+        if tvurl == '':
+         tvurl = getmediaUrl(["film", title, int(year)+1])
+         log("Divxplanet: searching subtitles for %s %s" % (title, int(year)+1))
+        if tvurl == '':
+         tvurl = getmediaUrl(["film", title, int(year)-1])
+         log("Divxplanet: searching subtitles for %s %s" % (title, int(year)-1))
         log("Divxplanet: got media url %s" % (tvurl))
         divpname = re.search(r"http:\/\/divxplanet.com\/sub\/m\/[0-9]{3,8}\/(.*.)\.html", tvurl).group(1)
         # Browser
