@@ -268,7 +268,6 @@ def Download(link, lang, filename): #standard input
     br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
     html = br.open(dlurl).read()
     br.select_form(name="dlform")
-    localFileName = None
     r=br.submit()
     if r.info().has_key('Content-Disposition'):
         # If the response has Content-Disposition, we take file name from it
@@ -278,9 +277,7 @@ def Download(link, lang, filename): #standard input
     elif r.url != url: 
         # if we were redirected, the real file name we take from the final URL
         localName = url2name(r.url)
-    if localFileName: 
-        # we can force to save the file as specified name
-        localName = localFileName
+    
     
 
     log("Divxplanet: Fetching subtitles using url %s" % (dlurl))
